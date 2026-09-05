@@ -11,6 +11,7 @@ business questions a retail/e-commerce analyst would actually be asked to answer
 - Python (Pandas) - data loading, cleaning, datetime handling, groupby/filtering
 - Power BI — DAX (CALCULATE, DISTINCTCOUNT, DIVIDE), data modeling, direct 
   PostgreSQL connection, interactive dashboards
+- Excel — formulas, pivot tables, percentage-based KPI calculations
 - Dataset: [Olist Brazilian E-Commerce](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce)
 
 ## Projects
@@ -22,6 +23,7 @@ business questions a retail/e-commerce analyst would actually be asked to answer
 | 3 | Running Totals & Revenue Share | How does revenue accumulate over time, and what % of total revenue does each category represent? | SUM() OVER() (partitioned and unpartitioned), grain management, percentage-of-total calculations | 
 | 4 | Delivery Time Analysis (Pandas) | How long does delivery take on average, and what data-cleaning was needed to get there reliably? | Pandas: CSV loading, datetime conversion, filtering, groupby, date arithmetic | 
 | 5 | Retail KPI Dashboard (Power BI) | What's total revenue, order volume, and AOV — and how does revenue trend month over month, by category? | Power BI, DAX (CALCULATE, DISTINCTCOUNT, DIVIDE), direct Postgres connection, year slicer | 
+| 6 | Sell-Through Rate Calculator | Which products/categories are overstocked or understocked, and does a category-level average hide problem products? | Excel formulas, pivot tables, percentage KPI calculation |
 
 ## Notable Data-Quality Findings
 
@@ -49,6 +51,11 @@ these reflect the kind of validation work a BI/data analyst does daily:
   sharp apparent "drop" near year-end this wasn't a real decline, it was 
   caused by missing 2018 data being blended with complete years (2016/2017) 
   in the same chart. Verified by adding a year slicer and checking years separately.
+- **Category averages can mask outlier products:** A category-level average 
+  sell-through rate (e.g., 73% for Beauty) can hide individual products 
+  performing far below or above that average (e.g., a 30% sell-through 
+  product within the same category) — aggregates are a starting point for 
+  investigation, not a final answer.
 
 ## About Me
 
