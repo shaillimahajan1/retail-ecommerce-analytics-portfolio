@@ -1,5 +1,15 @@
 # Progress Log
 
+## Day 6
+Refreshed Excel fundamentals (formulas, fill-down, pivot tables) and studied 
+retail KPI literacy AOV, CLV, cart abandonment, conversion rate, sell-through 
+rate, gross margin. Built a sell-through rate calculator with a pivot table 
+averaging rate by category. Found that category-level averages can mask 
+problem products Beauty averaged 73% sell-through, but that hid a Hair Dryer 
+sitting at just 30%, a real markdown/overstock candidate invisible at the 
+aggregate level. Same "aggregate hides detail" lesson as Day 1's top-products 
+work, showing up in a new tool.
+
 ## Day 5 
 Built first Power BI dashboard (Superstore-style KPIs on Olist data) Total 
 Revenue, Order Count, AOV, connected directly to Postgres instead of CSV. 
