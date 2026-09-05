@@ -16,7 +16,7 @@ business questions a retail/e-commerce analyst would actually be asked to answer
 ## Projects
 
 | # | Project | Business Question | Key Techniques | 
-|---|---------|-------------------|-----------------|------|
+|---|---------|-------------------|-----------------|
 | 1 | Top Products & Month-over-Month Growth | Which products drive the most revenue in each category, and how is category revenue trending month to month? | Multi-table joins, RANK() window function, LAG() for period-over-period growth, CTEs | 
 | 2 | Customer Cohort & Retention Analysis | How many months after their first order do customers come back to buy again? | Window functions (MIN() OVER), AGE()-based date math, multi-layer CTEs, cohort aggregation | 
 | 3 | Running Totals & Revenue Share | How does revenue accumulate over time, and what % of total revenue does each category represent? | SUM() OVER() (partitioned and unpartitioned), grain management, percentage-of-total calculations | 
