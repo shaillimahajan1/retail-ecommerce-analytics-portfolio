@@ -15,13 +15,13 @@ business questions a retail/e-commerce analyst would actually be asked to answer
 
 ## Projects
 
-| # | Project | Business Question | Key Techniques | Link |
+| # | Project | Business Question | Key Techniques | 
 |---|---------|-------------------|-----------------|------|
-| 1 | Top Products & Month-over-Month Growth | Which products drive the most revenue in each category, and how is category revenue trending month to month? | Multi-table joins, RANK() window function, LAG() for period-over-period growth, CTEs | [01_top_products_mom_growth.sql](sql/01_top_products_mom_growth.sql) |
-| 2 | Customer Cohort & Retention Analysis | How many months after their first order do customers come back to buy again? | Window functions (MIN() OVER), AGE()-based date math, multi-layer CTEs, cohort aggregation | [02_cohort_retention_analysis.sql](sql/02_cohort_retention_analysis.sql) |
-| 3 | Running Totals & Revenue Share | How does revenue accumulate over time, and what % of total revenue does each category represent? | SUM() OVER() (partitioned and unpartitioned), grain management, percentage-of-total calculations | [03_running_totals_revenue_share.sql](sql/03_running_totals_revenue_share.sql) |
-| 4 | Delivery Time Analysis (Pandas) | How long does delivery take on average, and what data-cleaning was needed to get there reliably? | Pandas: CSV loading, datetime conversion, filtering, groupby, date arithmetic | [day4_pandas_intro.ipynb](notebooks/day4_pandas_intro.ipynb) |
-| 5 | Retail KPI Dashboard (Power BI) | What's total revenue, order volume, and AOV — and how does revenue trend month over month, by category? | Power BI, DAX (CALCULATE, DISTINCTCOUNT, DIVIDE), direct Postgres connection, year slicer | [day5_retail_dashboard.pbix](dashboards/day5_retail_dashboard.pbix) |
+| 1 | Top Products & Month-over-Month Growth | Which products drive the most revenue in each category, and how is category revenue trending month to month? | Multi-table joins, RANK() window function, LAG() for period-over-period growth, CTEs | 
+| 2 | Customer Cohort & Retention Analysis | How many months after their first order do customers come back to buy again? | Window functions (MIN() OVER), AGE()-based date math, multi-layer CTEs, cohort aggregation | 
+| 3 | Running Totals & Revenue Share | How does revenue accumulate over time, and what % of total revenue does each category represent? | SUM() OVER() (partitioned and unpartitioned), grain management, percentage-of-total calculations | 
+| 4 | Delivery Time Analysis (Pandas) | How long does delivery take on average, and what data-cleaning was needed to get there reliably? | Pandas: CSV loading, datetime conversion, filtering, groupby, date arithmetic | 
+| 5 | Retail KPI Dashboard (Power BI) | What's total revenue, order volume, and AOV — and how does revenue trend month over month, by category? | Power BI, DAX (CALCULATE, DISTINCTCOUNT, DIVIDE), direct Postgres connection, year slicer | 
 
 ## Notable Data-Quality Findings
 
