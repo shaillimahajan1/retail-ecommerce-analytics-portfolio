@@ -1,5 +1,16 @@
 # Progress Log
 
+## Day 5 
+Built first Power BI dashboard (Superstore-style KPIs on Olist data) Total 
+Revenue, Order Count, AOV, connected directly to Postgres instead of CSV. 
+Found that filtering revenue/order count to "delivered" status only worked 
+for measures I explicitly rewrote with CALCULATE() a duplicate, unfiltered 
+measure (total_order_count) sat right next to a correctly filtered one 
+(Delivered Order Count) with different values, and I mistook them for the 
+same thing under two names. Learned to check the actual DAX formula bar 
+directly rather than assuming an edit was saved.
+
+
 ## Day 4 
 Loaded Olist CSVs into Pandas, converted date columns from string to datetime. 
 Hit two separate bugs: (1) wrong date format silently nulled out most valid 
