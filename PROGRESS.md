@@ -1,14 +1,35 @@
 # Progress Log
 
-## Day 6
-Refreshed Excel fundamentals (formulas, fill-down, pivot tables) and studied 
-retail KPI literacy AOV, CLV, cart abandonment, conversion rate, sell-through 
-rate, gross margin. Built a sell-through rate calculator with a pivot table 
-averaging rate by category. Found that category-level averages can mask 
-problem products Beauty averaged 73% sell-through, but that hid a Hair Dryer 
-sitting at just 30%, a real markdown/overstock candidate invisible at the 
-aggregate level. Same "aggregate hides detail" lesson as Day 1's top-products 
-work, showing up in a new tool.
+## Day 1 
+Built a top-10-products-per-category query with month-over-month growth, 
+using RANK() and LAG(). Found that LAG() compares to the previous row, not 
+the previous calendar month a category with a zero-order month silently 
+breaks the growth calculation. Documented as a known limitation.
+
+## Day 2 
+Built a customer cohort/retention query. Found that the dataset has two 
+customer ID columns customer_id (per-order) vs customer_unique_id (real 
+identity) and using the wrong one would've made every customer look like 
+a one-time buyer. Fixed by joining on customer_id but aggregating on 
+customer_unique_id. Used AGE() + window functions to calculate months-since-
+first-order, wrapped in a multi-layer CTE.
+
+## Day 3 
+Built running totals (per-category and overall) and revenue share % per 
+category using SUM() OVER(). Found that removing PARTITION BY alone doesn't 
+give a true "overall" running total if the underlying data is still grouped 
+by category and month had to re-aggregate to month-only grain first. 
+Learned that window functions operate on the grain you give them, not the 
+grain you intend.
+
+## Day 4 
+Loaded Olist CSVs into Pandas, converted date columns from string to datetime. 
+Hit two separate bugs: (1) wrong date format silently nulled out most valid 
+dates caught by comparing null counts before/after conversion, (2) after 
+fixing the format, a downstream variable still held stale/broken data due to 
+notebook execution order, not the code itself. Learned to verify data state 
+at each step, not just trust that a fix upstream propagates automatically. 
+Calculated average delivery time (12.09 days) as a sanity-checked final metric.
 
 ## Day 5 
 Built first Power BI dashboard (Superstore-style KPIs on Olist data) Total 
@@ -20,34 +41,31 @@ measure (total_order_count) sat right next to a correctly filtered one
 same thing under two names. Learned to check the actual DAX formula bar 
 directly rather than assuming an edit was saved.
 
+## Day 6
+Refreshed Excel fundamentals (formulas, fill-down, pivot tables) and studied 
+retail KPI literacy AOV, CLV, cart abandonment, conversion rate, sell-through 
+rate, gross margin. Built a sell-through rate calculator with a pivot table 
+averaging rate by category. Found that category-level averages can mask 
+problem products Beauty averaged 73% sell-through, but that hid a Hair Dryer 
+sitting at just 30%, a real markdown/overstock candidate invisible at the 
+aggregate level. Same "aggregate hides detail" lesson as Day 1's top-products 
+work, showing up in a new tool.
 
-## Day 4 
-Loaded Olist CSVs into Pandas, converted date columns from string to datetime. 
-Hit two separate bugs: (1) wrong date format silently nulled out most valid 
-dates caught by comparing null counts before/after conversion, (2) after 
-fixing the format, a downstream variable still held stale/broken data due to 
-notebook execution order, not the code itself. Learned to verify data state 
-at each step, not just trust that a fix upstream propagates automatically. 
-Calculated average delivery time (12.09 days) as a sanity-checked final metric.
+## Day 7 Week 1 Complete 
+Weekly retro + full mock interview. Retro covered all 6 days' concepts cold 
+window functions (RANK/LAG/SUM OVER), CTEs and SQL execution order, the 
+Pandas notebook-state bug, DAX filter context vs. CALCULATE(), and connecting 
+retail KPIs to each other (not just defining them). Mock interview: 1 SQL 
+live-coding question (second-highest-per-group pattern flagged for another 
+pass next retro), 1 case-study question (revenue drop investigation needed 
+scaffolding on structuring the approach, now have a reusable 4-stage 
+framework: clarify → rule out data issues → decompose the metric → find 
+cause → recommend action), 1 behavioral (customer_id/customer_unique_id 
+story), 1 DAX conceptual (row context vs. filter context) both delivered 
+cleanly, tied to real project examples.
 
-## Day 3 
-Built running totals (per-category and overall) and revenue share % per 
-category using SUM() OVER(). Found that removing PARTITION BY alone doesn't 
-give a true "overall" running total if the underlying data is still grouped 
-by category and month had to re-aggregate to month-only grain first. 
-Learned that window functions operate on the grain you give them, not the 
-grain you intend.
+Week 1 summary: 6 projects shipped (SQL x3, Pandas, Power BI dashboard, 
+Excel), 6 real bugs/insights caught and documented, GitHub fully structured 
+with README + progress log, retail KPI vocabulary internalized well enough 
+to connect metrics to each other, not just define them in isolation.
 
-## Day 2 
-Built a customer cohort/retention query. Found that the dataset has two 
-customer ID columns customer_id (per-order) vs customer_unique_id (real 
-identity) and using the wrong one would've made every customer look like 
-a one-time buyer. Fixed by joining on customer_id but aggregating on 
-customer_unique_id. Used AGE() + window functions to calculate months-since-
-first-order, wrapped in a multi-layer CTE.
-
-## Day 1 
-Built a top-10-products-per-category query with month-over-month growth, 
-using RANK() and LAG(). Found that LAG() compares to the previous row, not 
-the previous calendar month a category with a zero-order month silently 
-breaks the growth calculation. Documented as a known limitation.
