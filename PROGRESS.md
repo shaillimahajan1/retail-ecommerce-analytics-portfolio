@@ -69,3 +69,15 @@ Excel), 6 real bugs/insights caught and documented, GitHub fully structured
 with README + progress log, retail KPI vocabulary internalized well enough 
 to connect metrics to each other, not just define them in isolation.
 
+## Day 8 
+Started Tier 2 dropped structured courses in favor of task-first learning, 
+since that's clearly how I learn fastest (confirmed after a full week of 
+hands-on SQL work). Rebuilt Day 1's SQL revenue-per-category query in Pandas: 
+merged 4 tables (orders, order_items, products, category translation), 
+filtered to delivered orders, grouped and summed revenue, then visualized 
+top 10 categories with matplotlib. Verified results matched the SQL version 
+exactly (agro_industry_and_commerce: 76,203.30 in both). Hit two errors along 
+the way a typo (`.merged` instead of `.merge`) and a column-naming 
+mismatch after merging (`price` vs `price_x`) both fixed by directly 
+inspecting `.columns.tolist()` instead of guessing.
+
