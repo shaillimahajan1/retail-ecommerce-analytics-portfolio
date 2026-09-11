@@ -24,6 +24,7 @@ business questions a retail/e-commerce analyst would actually be asked to answer
 | 4 | Delivery Time Analysis (Pandas) | How long does delivery take on average, and what data-cleaning was needed to get there reliably? | Pandas: CSV loading, datetime conversion, filtering, groupby, date arithmetic | 
 | 5 | Retail KPI Dashboard (Power BI) | What's total revenue, order volume, and AOV — and how does revenue trend month over month, by category? | Power BI, DAX (CALCULATE, DISTINCTCOUNT, DIVIDE), direct Postgres connection, year slicer | 
 | 6 | Sell-Through Rate Calculator | Which products/categories are overstocked or understocked, and does a category-level average hide problem products? | Excel formulas, pivot tables, percentage KPI calculation |
+| 7 | Revenue-per-Category, Cross-Validated (Pandas) | Same business question as Project 1, solved in a second tool — do SQL and Pandas agree? | Pandas: multi-table merge, groupby/aggregation, matplotlib visualization |
 
 ## Notable Data-Quality Findings
 
