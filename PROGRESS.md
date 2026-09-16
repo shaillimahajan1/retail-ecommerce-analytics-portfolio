@@ -81,3 +81,17 @@ the way a typo (`.merged` instead of `.merge`) and a column-naming
 mismatch after merging (`price` vs `price_x`) both fixed by directly 
 inspecting `.columns.tolist()` instead of guessing.
 
+## Day 9
+Built customer spending-tier segmentation in SQL (CASE WHEN, no CTE needed 
+confirmed aggregates can be wrapped in CASE WHEN directly within the same 
+GROUP BY). Calculated mean/median/std of order value in Pandas; found mean 
+(₹160.58) notably higher than median (₹105.29), correctly diagnosed as 
+right-skewed distribution, tied back to a small number of high-value orders 
+pulling the average up. Hit a serious data-cleaning bug: price and 
+freight_value columns contained "$" symbols and comma thousand-separators 
+as raw strings pd.to_numeric(errors='coerce') silently converted every 
+value to NaN, then fillna(0) zeroed them all out, with no error thrown. 
+Same "coerce hides silent damage" lesson as Day 4's datetime bug, now a 
+confirmed pattern to watch for whenever converting string columns to 
+numeric. Rebuilt the customer spending-tier segmentation in Pandas using 
+merges + groupby, cross-validated tier counts against SQL (84,758/9,471/1,191 matched).
