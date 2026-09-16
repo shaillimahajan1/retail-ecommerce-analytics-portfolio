@@ -26,6 +26,7 @@ business questions a retail/e-commerce analyst would actually be asked to answer
 | 6 | Sell-Through Rate Calculator | Which products/categories are overstocked or understocked, and does a category-level average hide problem products? | Excel formulas, pivot tables, percentage KPI calculation |
 | 7 | Revenue-per-Category, Cross-Validated (Pandas) | Same business question as Project 1, solved in a second tool — do SQL and Pandas agree? | Pandas: multi-table merge, groupby/aggregation, matplotlib visualization |
 | 8 | Customer Spending Tier Segmentation | Which customers are high/medium/low value, and does the underlying order-value data behave the way a simple average would suggest? | SQL (CASE WHEN segmentation), Pandas (mean/median/std, merges, groupby), cross-tool validation |
+| 9 | Closely-Priced Products in High-Value Categories | Within categories known for higher-priced products, which specific products are priced closely enough to be direct competitors? | SQL: HAVING (aggregate filtering), self-joins, multi-CTE composition, subqueries with IN() |
 
 ## Notable Data-Quality Findings
 
