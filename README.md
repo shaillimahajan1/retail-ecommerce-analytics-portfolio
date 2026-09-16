@@ -25,6 +25,7 @@ business questions a retail/e-commerce analyst would actually be asked to answer
 | 5 | Retail KPI Dashboard (Power BI) | What's total revenue, order volume, and AOV — and how does revenue trend month over month, by category? | Power BI, DAX (CALCULATE, DISTINCTCOUNT, DIVIDE), direct Postgres connection, year slicer | 
 | 6 | Sell-Through Rate Calculator | Which products/categories are overstocked or understocked, and does a category-level average hide problem products? | Excel formulas, pivot tables, percentage KPI calculation |
 | 7 | Revenue-per-Category, Cross-Validated (Pandas) | Same business question as Project 1, solved in a second tool — do SQL and Pandas agree? | Pandas: multi-table merge, groupby/aggregation, matplotlib visualization |
+| 8 | Customer Spending Tier Segmentation | Which customers are high/medium/low value, and does the underlying order-value data behave the way a simple average would suggest? | SQL (CASE WHEN segmentation), Pandas (mean/median/std, merges, groupby), cross-tool validation |
 
 ## Notable Data-Quality Findings
 
