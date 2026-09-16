@@ -95,3 +95,16 @@ Same "coerce hides silent damage" lesson as Day 4's datetime bug, now a
 confirmed pattern to watch for whenever converting string columns to 
 numeric. Rebuilt the customer spending-tier segmentation in Pandas using 
 merges + groupby, cross-validated tier counts against SQL (84,758/9,471/1,191 matched).
+
+## Day 10
+Learned HAVING (filtering on aggregate results, since WHERE can't reference 
+values that don't exist until after GROUP BY) and self-joins (joining a 
+table to itself to compare rows within it). Built a query finding 
+closely-priced product pairs (within ₹5) in the same category using a 
+self-join with a product_id < product_id condition solves both the 
+self-matching and duplicate-mirrored-pair problems at once. Combined this 
+with HAVING logic in a 3-CTE query to find closely-priced pairs only within 
+categories whose average price exceeds ₹150, using a subquery with IN() 
+to link the two conditions together. Verified output against the 
+standalone Task 1 query.
+
